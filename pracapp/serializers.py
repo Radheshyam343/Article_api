@@ -1,9 +1,11 @@
-from dataclasses import field
+
 from rest_framework import serializers
 from .models import Article
 
 # model class serializers
-class ArticleSerializer(serializers.ModelField):
+class ArticleSerializer(serializers.ModelSerializer):
     class Meta:
-        model =Article
-        fields = ['id','title','author']
+        model = Article
+        #fields =  ['id','title','author','email']
+        fields = '__all__'
+
